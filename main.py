@@ -8,9 +8,9 @@ from pyfob import Fob
 
 def Emotiv(e):
     epoc = Epoc()
+    e.wait()
     t1 = time.time()
     t2 = time.time()
-    e.wait()
     i = 0
     while t2 - t1 < 20:
         t2 = time.time()
