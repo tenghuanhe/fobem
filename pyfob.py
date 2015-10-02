@@ -1,9 +1,10 @@
 # I should write a class for Flock of Birds
 # But how?
-import serial
 import time
+
+import serial
+
 import utils
-import numpy as np
 
 
 class Fob(object):
