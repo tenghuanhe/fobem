@@ -1,4 +1,5 @@
 import time
+
 from multiprocessing import Process, Event, Lock
 
 from pyemotiv import Epoc
@@ -20,8 +21,8 @@ def emotiv(e, l):
         data = epoc.get_raw()
         i += len(data[1])
         l.acquire()
-        print 'Emotiv,    ', i / 128.0
-        print time.time()
+        print '                Emotiv,       ', i
+        #        print time.time()
         l.release()
 
 
@@ -37,13 +38,13 @@ def ascension(e, l):
 
     while time.time() - t0 < winl:
         ti = time.time()
-        if ti - tp >= (1.0 / fs):
+        if ti - tp >= (0.75 / fs):
             tp = time.time()
             fob.get_posang()
             i += 1
             l.acquire()
-            print 'Ascension, ', i / fs
-            print time.time()
+            print 'Ascension, ', i
+            #            print time.time()
             l.release()
     fob.close()
 
