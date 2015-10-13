@@ -11,4 +11,8 @@ otherwise ctypes.CDLL will raise an error.
 - location known to your system's PATH:
     - Windows: `edk.dll` and `edk_utils.dll` in `windows/system32`
     - OSX: `libedk.dylib` and `libedk_ultils_mac.dylib` in `usr/local/lib`
-- `pip install https://github.com/thearn/pyemotiv.git`
+
+```
+pip install https://github.com/thearn/pyemotiv.git
+```
+
