@@ -6,7 +6,7 @@ from pyemotiv import Epoc
 
 from pyfob import Fob
 
-WINL = 50
+WINL = 300
 
 
 def emotiv(e, l):
@@ -26,6 +26,7 @@ def emotiv(e, l):
                     data[:, i]))
 
     fid.close()
+    print 'Emotiv stop...'
 
 
 def ascension(e, l):
@@ -45,6 +46,8 @@ def ascension(e, l):
     fid.close()
     fob.close()
 
+    print 'Ascension stop...'
+
 
 if __name__ == '__main__':
     Freq = 2500
@@ -59,7 +62,10 @@ if __name__ == '__main__':
 
     event.wait()
 
+    idx = 0
     t0 = time.time()
     while time.time() - t0 < WINL:
+        idx += 1
+        print idx
         winsound.Beep(Freq, Dur)
-        time.sleep(8)
+        time.sleep(13)
