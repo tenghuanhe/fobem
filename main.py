@@ -9,7 +9,7 @@ from pyfob import Fob
 WINL = 300
 
 
-def emotiv(e, l):
+def emotiv(e):
     epoc = Epoc()
     fid = open('emotiv.dat', 'w')
     e.wait()
@@ -29,7 +29,7 @@ def emotiv(e, l):
     print 'Emotiv stop...'
 
 
-def ascension(e, l):
+def ascension(e):
     fob = Fob()
     fid = open('fob.dat', 'w')
     e.set()
@@ -54,9 +54,8 @@ if __name__ == '__main__':
     Dur = 2000
 
     event = Event()
-    lock = Lock()
-    p1 = Process(target=emotiv, args=(event, lock,))
-    p2 = Process(target=ascension, args=(event, lock,))
+    p1 = Process(target=emotiv, args=(event,))
+    p2 = Process(target=ascension, args=(event,))
     p1.start()
     p2.start()
 
