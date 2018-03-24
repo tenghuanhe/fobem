@@ -1,9 +1,8 @@
 import time
 import winsound
+
 from multiprocessing import Process, Event, Lock
-
 from pyemotiv import Epoc
-
 from pyfob import Fob
 
 WINL = 300

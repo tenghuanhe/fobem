@@ -1,11 +1,6 @@
-# I should write a class for Flock of Birds
-# But how?
 import time
-
 import serial
-
 import utils
-
 
 class Fob(object):
     def __init__(self):
